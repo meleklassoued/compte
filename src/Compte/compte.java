@@ -7,16 +7,16 @@ public class compte {
 
     public compte() {
     }
-/* ------------------------ getter et setter de solde ----------------------- */
+
+    /* ------------------------ getter et setter de solde ----------------------- */
     public void setSolde(float solde) {
         this.solde = solde;
     }
+
     public float getSolde() {
         return this.solde;
     }
     /* ---------------------- fin setter getter pour solde ---------------------- */
-
-
 
     /* ------------------------ getter et setter de Nom ----------------------- */
     public void setNom(String nom) {
@@ -28,10 +28,9 @@ public class compte {
     }
     /* ---------------------- fin setter getter pour Nom---------------------- */
 
-
-
-
-    /* ------------------------ getter et setter de preNom ----------------------- */
+    /*
+     * ------------------------ getter et setter de preNom -----------------------
+     */
 
     public void setPrénom(String prénom) {
         this.prénom = prénom;
@@ -42,17 +41,17 @@ public class compte {
     }
     /* ---------------------- fin setter getter pour preNom---------------------- */
 
-
-
-
-
-
     public void desposer(float solde) {
         this.solde += solde;
     }
 
     public void retirer(float solde) {
         this.solde -= solde;
+    }
+
+    public void transfert(float d, compte autre) {
+        autre.retirer(d);
+        this.solde += d;
     }
 
     public void afficher() {
